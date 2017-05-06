@@ -147,21 +147,21 @@ var portsmouthClassifier = (function() {
 			// combine them & sort them
 			var join = sortByGrade(y2.concat(y3));
 
-			// grab 120 credits (top 50%) worth of units
+			// grab 100 credits (top 50%) worth of units
 			var creditCount = 0,
 				i = 0,
-				top120 = [],
+				topf100 = [],
 				tempUnit;
 
-			while (creditCount < 120) {
+			while (creditCount < 100) {
 				tempUnit = join[i];
 				creditCount += parseInt(tempUnit.credits, 10);
-				top120.push(tempUnit);
+				topf100.push(tempUnit);
 				i++;
 			}
 
 			// take bottom grade
-			return (_.last(top120).grade).toFixed(3);
+			return (_.last(topf100).grade).toFixed(3);
 		}
 	};
 
